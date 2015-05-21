@@ -1,4 +1,25 @@
-The Sort behavior helps with the process of sorting documents. It delivers several useful methods to manage sorting.
+# Sort behavior for Meteor Astronomy
+
+The `sort` behavior helps with the process of sorting documents. It delivers several useful methods to manage sorting.
+
+```js
+Post.addBehavior('sort', {
+  orderFieldName: 'order',
+  rootFieldName: 'root'
+});
+
+var post1 = new Post();
+post1.insertAt(0);
+
+var post2 = new Post();
+post2.insertAt(1);
+
+var cursor = Posts.find({}, {
+  sort: {
+    order: 1
+  }
+});
+```
 
 The `takeOut` method takes document out of the sorted list.
 
@@ -11,7 +32,7 @@ The `insertAt` method inserts document on the given position in the list.
 
 ```js
 var post = Posts.findOne();
-post.insert(0); // Insert at the beginning of the list
+post.insertAt(0); // Insert at the beginning of the list
 ```
 
 The `moveBy` method moves document up or down by given distance.
