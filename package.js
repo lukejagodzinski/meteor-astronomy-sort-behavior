@@ -12,6 +12,8 @@ Package.onUse(function(api) {
   api.use('underscore');
 
   // Behavior.
-  api.addFiles('lib/behavior/methods.js', ['client', 'server']);
-  api.addFiles('lib/behavior/behavior.js', ['client', 'server']);
+  api.addFiles([
+    'lib/behavior/methods.js',
+    'lib/behavior/behavior.js'
+  ], ['client', 'server']);
 });
