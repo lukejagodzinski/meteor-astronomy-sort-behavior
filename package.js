@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   // Behavior.
   api.addFiles([
     'lib/behavior/methods.js',
+    'lib/behavior/events.js',
     'lib/behavior/behavior.js'
   ], ['client', 'server']);
 });
